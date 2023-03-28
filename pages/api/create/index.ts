@@ -3,7 +3,9 @@ import { students } from "../db"
 import {IStudents} from "../../../types"
 
 const handler = async (req : NextApiRequest, res : NextApiResponse<{message:string}>) => {
-    if (req.method === 'POST') {
-        req.body.
-    }
+    const { method } = req;
+    if (method === "POST") {
+     const body = JSON.parse(req.body);
+     res.status(200).json(body);
+    };
 }
